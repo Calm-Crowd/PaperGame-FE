@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
 import ProfileImages from "./ProfileImages";
 import bgImage from "../../assets/bg-modal.png";
 import image1 from "../../assets/Profile-Images/image-1.jpg";
@@ -7,11 +9,16 @@ import image3 from "../../assets/Profile-Images/image-3.jpg";
 import image4 from "../../assets/Profile-Images/image-4.jpg";
 import image5 from "../../assets/Profile-Images/image-5.jpg";
 import image6 from "../../assets/Profile-Images/image-6.jpg";
+import JoinRoom from "./JoinRoom";
 
 const CreateRoom = () => {
   const [selectedImage, setSelectedImage] = useState(image1);
   const [isPopupOpen, setIsPopupOpen] = useState(false); 
+  const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
   const [useName, setUseName] = useState("");
+  const [roomId, setRoomId] = useState("");
+
+  const navigate = useNavigate();
 
   const images = [
     image1,
@@ -24,6 +31,17 @@ const CreateRoom = () => {
 
   const handleImageSelect = (image) => {
     setSelectedImage(image);
+  };
+
+  const handlePlayNow = () => {
+    navigate('/Coming-Soon');
+  };
+
+  const handleJoinRoom = () => {
+    // Add logic to join room with roomId
+    console.log("Joining Room with ID:", roomId);
+    setIsJoinModalOpen(false);
+    // Navigate or make an API call to join the room
   };
   
   return (
@@ -71,10 +89,28 @@ const CreateRoom = () => {
           </div>
         </div>
         <div className="d-flex justify-content-center mt-3 mb-3">
-          <button disabled={!useName}  className={`create-room-btn ${!useName ? "disabled-btn" : ""}`}>Create Room</button>
-          <button disabled={!useName} className={`create-room-btn join-btn ${!useName ? "disabled-btn" : ""}`}>Join Room</button>
+          <button 
+            disabled={!useName}  
+            className={`create-room-btn ${!useName ? "disabled-btn" : ""}`}
+            onClick={handlePlayNow}
+          >
+            Create Room
+          </button>
+          <button 
+            disabled={!useName} 
+            className={`create-room-btn join-btn ${!useName ? "disabled-btn" : ""}`}
+            onClick={() => setIsJoinModalOpen(true)}
+          >
+              Join Room
+          </button>
         </div>
-
+        {isJoinModalOpen && 
+        <JoinRoom 
+          roomId={roomId} 
+          setRoomId={setRoomId}
+          setIsJoinModalOpen={setIsJoinModalOpen}
+          handleJoinRoom={handleJoinRoom}
+        />}
         <style>{`
        .name-image-container {
           border: 1px solid #ccc;
