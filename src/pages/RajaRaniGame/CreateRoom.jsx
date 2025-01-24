@@ -1,18 +1,25 @@
 import React, { useState } from "react";
 import ProfileImages from "./ProfileImages";
+import bgImage from "../../assets/bg-modal.png";
+import image1 from "../../assets/Profile-Images/image-1.jpg";
+import image2 from "../../assets/Profile-Images/image-2.jpg";
+import image3 from "../../assets/Profile-Images/image-3.jpg";
+import image4 from "../../assets/Profile-Images/image-4.jpg";
+import image5 from "../../assets/Profile-Images/image-5.jpg";
+import image6 from "../../assets/Profile-Images/image-6.jpg";
 
 const CreateRoom = () => {
-  const [selectedImage, setSelectedImage] = useState(
-    "https://loremflickr.com/200/200?random=1"
-  );
+  const [selectedImage, setSelectedImage] = useState(image1);
   const [isPopupOpen, setIsPopupOpen] = useState(false); 
   const [useName, setUseName] = useState("");
 
   const images = [
-    "https://loremflickr.com/200/200?random=1",
-    "https://loremflickr.com/200/200?random=2",
-    "https://loremflickr.com/200/200?random=3",
-    "https://loremflickr.com/200/200?random=4",
+    image1,
+    image2,
+    image3,
+    image4,
+    image5,
+    image6
   ];
 
   const handleImageSelect = (image) => {
@@ -55,7 +62,7 @@ const CreateRoom = () => {
             <div className="name-input mb-3">
               <input
                 type="text"
-                placeholder="Enter your name"
+                placeholder=""
                 value={useName}
                 onChange={(e) => setUseName(e.target.value)}
                 className="form-control"
@@ -74,9 +81,12 @@ const CreateRoom = () => {
           padding: 20px;
           width: 50%;
           margin: 0 auto;
-          border-radius: 5px;
+          border-radius: 4px;
           box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-          background-color: #f5f5f5;
+          background-image: url(${bgImage});
+          background-size: cover; /* Ensures the image covers the container */
+          background-position: center; /* Centers the image */
+          background-repeat: no-repeat; 
         }
         .image-display {
           display: flex;
@@ -86,13 +96,13 @@ const CreateRoom = () => {
         .image-rectangle {
           position: relative;
           width: 200px; /* Rectangle width */
-          height: 120px; /* Rectangle height */
+          height: 150px; /* Rectangle height */
           border-radius: 5px;
         }
         .selected-image-rectangle {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          // object-fit: cover;
           border-radius: 5px;
         }
         .edit-icon {
@@ -112,6 +122,9 @@ const CreateRoom = () => {
         }
         .name-input{
             margin-left: 20px;
+        }
+        .name-input input {
+          text-align: center; /* Center-align the input text */
         }
         .create-room-btn {
           background-color: #007bff; /* Primary blue color */

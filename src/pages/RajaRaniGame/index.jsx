@@ -5,7 +5,7 @@ import CreateRoom from './CreateRoom';
 const index = () => {
   return (
     <div>
-     <Header joinRoom={false}/>
+     <Header joinRoom={false} showBackButton={true}/>
      <CreateRoom />
     </div>
   )

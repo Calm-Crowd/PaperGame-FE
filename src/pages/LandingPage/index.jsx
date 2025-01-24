@@ -11,7 +11,7 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page-container app-container">
-      <Header joinRoom={true}/>
+      <Header joinRoom={true} showBackButton={false}/>
       <main className="main-content">
         <div className="game-card">
           <h2>Raja Rani Manthri Sipai</h2>
