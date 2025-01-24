@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from './../../components/header';
 import { Icon } from '@iconify/react';
 import outputImage from '../../assets/raja.svg';
@@ -6,15 +7,21 @@ import image from '../../assets/image.png';
 
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+  
+  const handlePlayNow = () => {
+    navigate('/Raja-Rani-Manthri-Sipai');
+  };
+
   return (
     <div className="landing-page-container app-container">
-      <Header />
+      <Header joinRoom={true} showBackButton={false}/>
       <main className="main-content">
         <div className="game-card">
           <img src={outputImage} alt="img" className="responsive-image plus-icon" />
           <h2>Raja Rani Manthri Sipai</h2>
-          <h5 className='mb-4'>Your childhood favorite game is here</h5>
-          <button>Play Now</button>
+          <p>A classic Indian game of roles and strategy.</p>
+          <button onClick={handlePlayNow}>Play Now</button>
         </div>
         <div className="game-card text-center">
           <div className="plus-icon">
