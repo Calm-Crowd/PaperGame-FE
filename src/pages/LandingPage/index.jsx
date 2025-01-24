@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from './../../components/header';
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+  
+  const handlePlayNow = () => {
+    navigate('/Raja-Rani-Manthri-Sipai');
+  };
+
   return (
     <div className="landing-page-container app-container">
-      <Header/>
+      <Header joinRoom={true}/>
       <main className="main-content">
         <div className="game-card">
           <h2>Raja Rani Manthri Sipai</h2>
           <p>A classic Indian game of roles and strategy.</p>
-          <button>Play Now</button>
+          <button onClick={handlePlayNow}>Play Now</button>
         </div>
         <div className="game-card text-center">
           <div className="big-plus">+</div>
