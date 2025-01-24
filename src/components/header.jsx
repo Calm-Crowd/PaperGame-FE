@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Header() {
+function Header({joinRoom}) {
   const [showModal, setShowModal] = useState(false);
 
   const handleBuildGameClick = () => {
@@ -15,7 +15,7 @@ function Header() {
     <div>
       <nav className="navbar">
         <a href="/" className="logo">Paper Games</a>
-        <button className="join-button">Join Room</button>
+        {joinRoom && <button className="join-button">Join Room</button>}
       </nav>
       <style>{`
         .navbar {
