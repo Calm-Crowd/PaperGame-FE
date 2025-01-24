@@ -39,7 +39,7 @@ const LandingPage = () => {
     <div className="landing-page">
       <Header onJoinGameClick={handleJoinGameClick} />
 
-      <div className="game-selection-container">
+      <div className="game-selection-container mt-5">
         <h1>Welcome to the Game Zone!</h1>
         <p>Choose a game to get started</p>
         <div className="game-cards">
