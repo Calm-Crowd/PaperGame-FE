@@ -87,14 +87,13 @@ const CreateRoom = () => {
           position: relative;
           width: 200px; /* Rectangle width */
           height: 120px; /* Rectangle height */
-          border: 3px solid #007bff;
-          border-radius: 8px;
+          border-radius: 5px;
         }
         .selected-image-rectangle {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          border-radius: 8px;
+          border-radius: 5px;
         }
         .edit-icon {
           position: absolute;
