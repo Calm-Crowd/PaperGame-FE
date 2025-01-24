@@ -11,7 +11,7 @@ const LandingPage = () => {
 
   const handleGameSelection = (game) => {
     setSelectedGame(game);
-    navigate('/game', { state: { gameName: game } });
+    navigate(game);
   };
 
   const handleJoinGameClick = () => {
@@ -43,11 +43,11 @@ const LandingPage = () => {
         <h1>Welcome to the Game Zone!</h1>
         <p>Choose a game to get started</p>
         <div className="game-cards">
-          <div className="game-card" onClick={() => handleGameSelection('Trump Card')}>
+          <div className="game-card" onClick={() => handleGameSelection('/trump-card')}>
             <img src="https://example.com/trump-card-image.jpg" alt="Trump Card" className="game-card-img" />
             <h3>Trump Card</h3>
           </div>
-          <div className="game-card" onClick={() => handleGameSelection('Raja Rani')}>
+          <div className="game-card" onClick={() => handleGameSelection('/raja-rani')}>
             <img src="https://example.com/raja-rani-image.jpg" alt="Raja Rani" className="game-card-img" />
             <h3>Raja Rani</h3>
           </div>
