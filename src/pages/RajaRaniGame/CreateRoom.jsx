@@ -9,7 +9,7 @@ import image3 from "../../assets/Profile-Images/image-3.jpg";
 import image4 from "../../assets/Profile-Images/image-4.jpg";
 import image5 from "../../assets/Profile-Images/image-5.jpg";
 import image6 from "../../assets/Profile-Images/image-6.jpg";
-import JoinRoom from "./JoinRoom";
+import JoinRoom from "../../components/JoinRoom";
 
 const CreateRoom = () => {
   const [selectedImage, setSelectedImage] = useState(image1);
