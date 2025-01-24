@@ -1,5 +1,5 @@
 body {
-  font-family: "Delius", serif !important;
+  font-family: "Handlee", serif !important;
   width: calc(100% -30px);
   margin: 0;
   padding: 0;
@@ -25,9 +25,9 @@ body {
   -moz-border-radius: 3px;
   border-radius: 3px;
 
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
   font-family: "Delius", serif;
   padding-left: 30px;
 }
