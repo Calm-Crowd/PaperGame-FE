@@ -1,33 +1,39 @@
 /* Background and general page styling */
 .landing-page {
     background-color: #f2f2f2;
-    background-image: url('https://www.transparenttextures.com/patterns/corkboard.png');
+    background-image: url('https://www.transparenttextures.com/patterns/corkboard.png'); /* Paper texture */
     background-size: cover;
     font-family: 'Georgia', serif;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    min-height: 100vh;
   }
   
   .game-selection-container {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 800px;
+    background-color: #f5f5f5; /* Light paper color */
+    background-image: 
+      linear-gradient(45deg, #d9d9d9 25%, transparent 25%), 
+      linear-gradient(-45deg, #d9d9d9 25%, transparent 25%), 
+      url('https://www.transparenttextures.com/patterns/paper-bag.png'); /* Optional: Add paper texture image */
+    background-size: 10px 10px, 10px 10px, 100%; /* Adjust texture and pattern sizes */
+    background-position: 0 0, 5px 5px, 0 0; /* Control the positioning of textures */
+    padding: 40px 20px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3), 0 5px 20px rgba(0, 0, 0, 0.15); /* Shadow effects for depth */
+    border-radius: 8px;
+    border: 1px solid #ccc; /* Subtle border to enhance paper feel */
+    font-family: 'Georgia', serif;
     text-align: center;
-    background-color: #fefefe;
-    background-image: url('https://www.transparenttextures.com/patterns/paper.png');
-    background-repeat: repeat;
-    border: 1px solid #e1e1e1;
+    max-width: 1000px;
+    width: 100%;
+    margin: 20px;
   }
   
   h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
-    color: #333;
+    color: #3e3e3e; /* Darker text for better contrast */
   }
   
   p {
@@ -39,17 +45,17 @@
   .game-cards {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
     flex-wrap: wrap;
   }
   
   .game-card {
     cursor: pointer;
-    width: 200px;
-    height: 300px;
+    width: 220px;
+    height: 320px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #fff;
@@ -57,7 +63,7 @@
   
   .game-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   }
   
   .game-card-img {
@@ -67,10 +73,10 @@
   }
   
   .game-card h3 {
-    padding: 10px;
+    padding: 12px;
     font-size: 1.5rem;
     color: #333;
-    background-color: #fff;
+    background-color: #f8f9fa; /* Light gray background */
     margin: 0;
     border-top: 2px solid #007bff;
   }
@@ -101,19 +107,21 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
   .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
     text-align: center;
     width: 300px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    background-image: url('https://www.transparenttextures.com/patterns/paper-2.png'); /* Paper texture background */
+    background-size: cover;
   }
   
   .room-id-input {
@@ -159,7 +167,7 @@
   /* Responsive Styles */
   @media (max-width: 768px) {
     h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
   
     p {
