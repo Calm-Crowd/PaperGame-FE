@@ -18,6 +18,7 @@ const JoinRoom = ({
               className="form-control mb-3"
             />
             <div className="modal-buttons">
+              <a href="https://play.google.com/store/apps/details?id=mantri.raja.rajamantri&hl=en_IN">
               <button
                 onClick={handleJoinRoom}
                 className="create-room-btn"
@@ -25,6 +26,7 @@ const JoinRoom = ({
               >
                 Join
               </button>
+              </a>
               <button
                 onClick={() => setIsJoinModalOpen(false)}
                 className="create-room-btn cancel-btn"
