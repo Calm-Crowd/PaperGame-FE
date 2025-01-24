@@ -12,13 +12,15 @@ const LandingPage = () => {
       <div className="game-selection-container">
         <h1>Welcome to the Game Zone!</h1>
         <p>Choose a game to get started</p>
-        <div className="game-buttons">
-          <button className="game-button" onClick={() => handleGameSelection('Trump Card')}>
-            Trump Card
-          </button>
-          <button className="game-button" onClick={() => handleGameSelection('Raja Rani')}>
-            Raja Rani
-          </button>
+        <div className="game-cards">
+          <div className="game-card" onClick={() => handleGameSelection('Trump Card')}>
+            <img src="https://example.com/trump-card-image.jpg" alt="Trump Card" className="game-card-img"/>
+            <h3>Trump Card</h3>
+          </div>
+          <div className="game-card" onClick={() => handleGameSelection('Raja Rani')}>
+            <img src="https://example.com/raja-rani-image.jpg" alt="Raja Rani" className="game-card-img"/>
+            <h3>Raja Rani</h3>
+          </div>
         </div>
 
         {selectedGame && (
@@ -58,25 +60,40 @@ p {
   color: #6c757d;
 }
 
-.game-buttons {
+.game-cards {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
 }
 
-.game-button {
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
+.game-card {
   cursor: pointer;
-  transition: background-color 0.3s;
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
 }
 
-.game-button:hover {
-  background-color: #0056b3;
+.game-card:hover {
+  transform: scale(1.05);
+}
+
+.game-card-img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.game-card h3 {
+  padding: 10px;
+  font-size: 1.5rem;
+  color: #343a40;
+  background-color: #fff;
+  margin: 0;
+  border-top: 2px solid #007bff;
 }
 
 .game-info {
