@@ -76,11 +76,10 @@ const CreateRoom = () => {
 
         <div className="col-md-12">
           <div className="d-flex justify-content-center align-items-center mt-5">
-            <p>Enter Your Name: </p>
             <div className="name-input mb-3">
               <input
                 type="text"
-                placeholder=""
+                placeholder="Enter Your Name"
                 value={useName}
                 onChange={(e) => setUseName(e.target.value)}
                 className="form-control"
@@ -89,13 +88,15 @@ const CreateRoom = () => {
           </div>
         </div>
         <div className="d-flex justify-content-center mt-3 mb-3">
+        <a href="https://play.google.com/store/apps/details?id=mantri.raja.rajamantri&hl=en_IN">
           <button 
             disabled={!useName}  
             className={`create-room-btn ${!useName ? "disabled-btn" : ""}`}
-            onClick={handlePlayNow}
+            // onClick={handlePlayNow}
           >
             Create Room
           </button>
+          </a>
           <button 
             disabled={!useName} 
             className={`create-room-btn join-btn ${!useName ? "disabled-btn" : ""}`}
